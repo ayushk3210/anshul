@@ -3,551 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nitish - MERN Stack Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Happy Birthday My Love!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #00E5FF;
-            --bg-color: #0B0C10;
-            --card-bg-color: rgba(28, 41, 56, 0.5);
-            --text-color: #C5C6C7;
-            --heading-color: #FFFFFF;
-            --glow-shadow: 0 0 15px rgba(0, 229, 255, 0.5), 0 0 30px rgba(0, 229, 255, 0.3);
-            --glass-bg: rgba(20, 30, 40, 0.6);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.6;
         }
 
-        /* --- Scrollbar --- */
-        ::-webkit-scrollbar {
-            width: 8px;
+        h1, h2, h3 {
+            font-family: 'Pacifico', cursive;
         }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-color);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 10px;
+
+        :root {
+            --blush-pink: #FFF0F5;
+            --deep-rose: #FF69B4;
+            --royal-purple: #8A2BE2;
+            --lilac-white: #E6E6FA;
+            --midnight-blue: #0d001a;
+            --dark-text: #333;
         }
 
         .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 50px 0;
-        }
-
-        /* --- Header / Navigation --- */
-        .header {
-            position: fixed;
-            top: 0;
             width: 100%;
-            z-index: 1000;
-            padding: 15px 5%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--heading-color);
-            text-decoration: none;
-        }
-        .logo span { color: var(--primary-color); }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-        .nav-links li {
-            margin-left: 30px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-color);
-        }
-        #menu-toggle { display: none; }
-        .menu-icon { display: none; }
-
-
-        /* --- General Section Styling --- */
-        section {
-            min-height: 80vh;
-            padding-top: 100px; /* Offset for fixed header */
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--heading-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        /* --- Hero Section --- */
-        #home {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
             min-height: 100vh;
-        }
-        .hero-content {
-            max-width: 700px;
-        }
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            box-shadow: var(--glow-shadow);
-            margin-bottom: 20px;
-        }
-        .hero-content h1 {
-            font-size: 3rem;
-            color: var(--heading-color);
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            margin: 15px 0;
-        }
-        .typewriter {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            border-radius: 6px;
-            color: var(--bg-color);
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: var(--glow-shadow);
-        }
-        .btn:hover {
-            background: transparent;
-            color: var(--primary-color);
-        }
-
-        /* --- About Section --- */
-        .about-content {
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--card-bg-color);
-        }
-
-        /* --- Skills Section --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .skill-category {
-            background: var(--card-bg-color);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            border-radius: 10px;
-            padding: 25px;
-        }
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
-            padding-bottom: 10px;
-        }
-        .skill-list {
-            list-style: none;
-        }
-        .skill-list li {
-            margin-bottom: 10px;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-        }
-        .skill-list i {
-            color: var(--primary-color);
-            margin-right: 15px;
-            width: 20px;
-        }
-
-        /* --- Projects Section --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        .project-card {
-            background: var(--card-bg-color);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            border-radius: 10px;
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
-        }
-        .project-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        .project-tech {
-            margin: 15px 0;
-        }
-        .project-tech span {
-            background: rgba(0, 229, 255, 0.1);
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-right: 10px;
-            font-size: 0.9rem;
-        }
-        .project-links a {
-            margin-right: 15px;
-        }
-
-        /* --- Experience Section --- */
-        .experience-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .experience-timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--primary-color);
-            box-shadow: var(--glow-shadow);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-        .experience-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-        }
-        .experience-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: var(--bg-color);
-            border: 4px solid var(--primary-color);
-            top: 25px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .left { left: 0; }
-        .right {
-            left: 50%;
-        }
-        .right::after {
-            left: -10px;
-        }
-        .experience-content {
             padding: 20px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            border-radius: 8px;
-            position: relative;
-        }
-        .experience-content h3 { color: var(--heading-color); }
-        .experience-content h4 { color: var(--primary-color); margin: 5px 0; }
-        .experience-content p { font-size: 0.9rem; }
-
-
-        /* --- Contact Section --- */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            background: var(--card-bg-color);
-            color: var(--text-color);
-            font-family: 'Poppins', sans-serif;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        .contact-info {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .contact-info a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-        .contact-info a:hover {
-            color: var(--primary-color);
+            transition: background-color 2s ease-in-out, background 2s ease-in-out;
         }
 
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 20px;
-            border-top: 1px solid rgba(0, 229, 255, 0.1);
-        }
-
-        /* --- Animations on Scroll --- */
         .hidden {
+            display: none !important;
+        }
+
+        /* Welcome Module */
+        .welcome-screen {
+            background-color: var(--blush-pink);
+            color: var(--dark-text);
+        }
+
+        .welcome-card {
+            background-color: white;
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+            max-width: 520px;
+        }
+
+        .welcome-card h1 {
+            color: var(--deep-rose);
+            font-size: 2.8em;
+            margin-bottom: 15px;
+        }
+
+        .welcome-card p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+
+        .quote {
+            background-color: rgba(255, 105, 180, 0.15);
+            padding: 25px;
+            border-radius: 12px;
+            font-style: italic;
+            margin: 25px 0;
+            color: var(--deep-rose);
+            font-size: 1.05em;
+        }
+
+        /* Memory Module */
+        .memories-screen {
+            background-color: var(--lilac-white);
+            color: var(--dark-text);
+        }
+
+        .memories-screen h2 {
+            color: var(--royal-purple);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .memory-card {
+            width: 100%;
+            max-width: 380px;
+            height: 480px;
+            background-color: #f8f8f8;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+            border: 3px solid white;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover {
+            transform: scale(1.03);
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .memory-caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+            color: white;
+            padding: 20px;
+            font-style: italic;
+            font-size: 1.1em;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Cake Module */
+        .cake-screen {
+            background: linear-gradient(180deg, #ffcccc 0%, #cc99ff 100%);
+        }
+
+        .cake-screen h2 {
+            color: var(--deep-rose);
+            font-size: 2.8em;
+            margin-bottom: 50px;
+            animation: pulse 1s infinite alternate;
+        }
+
+        .cake {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+
+        .tier {
+            background: linear-gradient(135deg, #FFB6D9 0%, #FF69B4 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .tier-1 {
+            width: 180px;
+            height: 60px;
+        }
+
+        .tier-2 {
+            width: 230px;
+            height: 70px;
+        }
+
+        .tier-3 {
+            width: 280px;
+            height: 80px;
+        }
+
+        .candle {
+            position: absolute;
+            width: 5px;
+            height: 25px;
+            background: #FF8C00;
+            border-radius: 50%;
+            top: -10px;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
+        }
+
+        /* Lights Module */
+        .lights-screen {
+            background-color: var(--midnight-blue);
+            color: white;
+            transition: all 2s ease-in-out;
+        }
+
+        .lights-screen.bright {
+            background: linear-gradient(135deg, #6a5acd 0%, var(--royal-purple) 100%);
+        }
+
+        .lights-prompt h2 {
+            font-size: 2.8em;
+            margin-bottom: 50px;
+        }
+
+        .final-message {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 1.5s ease;
+            background-color: white;
+            color: var(--dark-text);
+            padding: 45px 40px;
+            border-radius: 25px;
+            max-width: 550px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            text-align: left;
         }
-        .visible {
+
+        .final-message.show {
             opacity: 1;
-            transform: translateY(0);
         }
-        
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: absolute;
-                top: 70px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--bg-color);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 50px;
-                transition: right 0.4s ease-in-out;
+
+        .final-message h3 {
+            color: var(--deep-rose);
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        .final-message p {
+            margin: 18px 0;
+            line-height: 1.8;
+            color: var(--dark-text);
+            font-size: 1.05em;
+        }
+
+        .final-message .signature {
+            text-align: right;
+            margin-top: 35px;
+            font-weight: bold;
+            color: var(--deep-rose);
+        }
+
+        /* Button Styling */
+        .action-button {
+            padding: 16px 40px;
+            margin-top: 35px;
+            border: none;
+            border-radius: 35px;
+            background: linear-gradient(90deg, #ff80a8 0%, var(--deep-rose) 100%);
+            color: white;
+            font-size: 1.15em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(255, 105, 180, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .action-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.7);
+        }
+
+        .action-button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
             }
-            .nav-links li { margin: 20px 0; }
-            #menu-toggle:checked ~ .nav-links { right: 0; }
-            .menu-icon {
-                display: block;
-                color: var(--heading-color);
-                font-size: 1.8rem;
-                cursor: pointer;
+            to {
+                transform: scale(1.12);
             }
-            
-            .experience-timeline::after { left: 10px; }
-            .experience-item { width: 100%; padding-left: 40px; padding-right: 0; }
-            .left::after, .right::after { left: 1px; }
-            .right { left: 0%; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <a href="#" class="logo">Nitish<span>.</span></a>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </header>
-
-    <main>
-        <section id="home">
-            <div class="hero-content hidden">
-                <img src="https://i.imgur.com/uCLLbf1.png" alt="Nitish's Profile Picture" class="profile-pic">
-                <h1>Hi, I'm Nitish</h1>
-                <p>A passionate <span class="typewriter"></span> Developer based in India.</p>
-                <a href="#contact" class="btn">Hire Me</a>
+    <!-- Welcome Screen -->
+    <div id="welcome" class="container welcome-screen">
+        <div class="welcome-card">
+            <h1>Happy Birthday My Love! 💕✨</h1>
+            <p>To the most amazing woman in my life</p>
+            <div class="quote">
+                "Every moment with you is a gift, and today we celebrate the greatest gift of all - YOU! 🌹"
             </div>
-        </section>
+            <button class="action-button" onclick="showMemories()">Begin Your Surprise! 💖</button>
+        </div>
+    </div>
 
-        <section id="about" class="container">
-            <h2 class="section-title hidden">About Me</h2>
-            <div class="about-content hidden">
-                <p>I am a dedicated MERN stack developer with a strong foundation in building modern, responsive, and scalable web applications. My expertise lies in crafting seamless user experiences with React on the frontend and developing robust server-side logic with Node.js and Express. I am passionate about clean code, continuous learning, and turning complex problems into elegant digital solutions.</p>
+    <!-- Memories Screen -->
+    <div id="memories" class="container memories-screen hidden">
+        <h2>Mirror of Memories 💖</h2>
+        <div class="memory-card" id="memoryCard">
+            <img id="memoryImage" src="" alt="Memory">
+            <div id="initialPrompt" style="text-align: center;">
+                <p style="font-size: 1.2em; color: #999;">Click to see your memories</p>
             </div>
-        </section>
+            <div id="memoryCaption" class="memory-caption" style="display:none;"></div>
+        </div>
+        <button id="nextBtn" class="action-button hidden" onclick="showCake()">Next Surprise →</button>
+    </div>
 
-        <section id="skills" class="container">
-            <h2 class="section-title hidden">My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category hidden">
-                    <h3><i class="fas fa-code"></i> Frontend</h3>
-                    <ul class="skill-list">
-                        <li><i class="fab fa-html5"></i> HTML5</li>
-                        <li><i class="fab fa-css3-alt"></i> CSS3 & SCSS</li>
-                        <li><i class="fab fa-js-square"></i> JavaScript (ES6+)</li>
-                        <li><i class="fab fa-react"></i> React</li>
-                        <li><i class="fab fa-bootstrap"></i> Bootstrap & Tailwind CSS</li>
-                    </ul>
-                </div>
-                <div class="skill-category hidden">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <ul class="skill-list">
-                        <li><i class="fab fa-node-js"></i> Node.js</li>
-                        <li><i class="fas fa-cogs"></i> Express.js</li>
-                        <li><i class="fas fa-cloud"></i> RESTful APIs</li>
-                        <li><i class="fas fa-fingerprint"></i> Authentication (JWT)</li>
-                    </ul>
-                </div>
-                <div class="skill-category hidden">
-                    <h3><i class="fas fa-database"></i> Databases & Tools</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-leaf"></i> MongoDB</li>
-                        <li><i class="fas fa-fire"></i> Firebase</li>
-                        <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
-                        <li><i class="fas fa-terminal"></i> VS Code</li>
-                    </ul>
-                </div>
+    <!-- Cake Screen -->
+    <div id="cake" class="container cake-screen hidden">
+        <h2>Let's Cut the Cake! 🎂</h2>
+        <div class="cake">
+            <div class="tier tier-1"></div>
+            <div class="tier tier-2"></div>
+            <div class="tier tier-3" style="position: relative;">
+                <div class="candle" style="left: 45%;"></div>
             </div>
-        </section>
+        </div>
+        <button class="action-button" onclick="showLights()">Next Page →</button>
+    </div>
 
-        <section id="projects" class="container">
-            <h2 class="section-title hidden">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card hidden">
-                    <h3>E-commerce Website</h3>
-                    <p>A fully-featured e-commerce platform with product listings, a shopping cart, user authentication, and a checkout process. Built using the MERN stack for a dynamic and responsive shopping experience.</p>
-                    <div class="project-tech">
-                        <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn">Live</a>
-                        <a href="#" class="btn">Code</a>
-                    </div>
-                </div>
-                <div class="project-card hidden">
-                    <h3>Task Management App</h3>
-                    <p>A collaborative task management application allowing users to create projects, assign tasks, and track progress. Features real-time updates and a clean, intuitive user interface.</p>
-                    <div class="project-tech">
-                        <span>React</span><span>Firebase</span><span>Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn">Live</a>
-                        <a href="#" class="btn">Code</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="container">
-            <h2 class="section-title hidden">Experience</h2>
-            <div class="experience-timeline">
-                <div class="experience-item left hidden">
-                    <div class="experience-content">
-                        <h3>Full-Stack Development Intern</h3>
-                        <h4>Company A | Remote</h4>
-                        <p>Developed and maintained web applications using React and Node.js. Collaborated with a team to implement new features and fix bugs, improving application performance by 15%.</p>
-                    </div>
-                </div>
-                <div class="experience-item right hidden">
-                    <div class="experience-content">
-                        <h3>Full-Stack Development Intern</h3>
-                        <h4>Company B | On-site</h4>
-                        <p>Assisted in building a customer relationship management (CRM) system from scratch. Focused on API development with Express.js and database management with MongoDB.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="container">
-            <h2 class="section-title hidden">Contact Me</h2>
-            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form hidden">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <p id="form-status" style="text-align:center; margin-top: 20px;"></p>
-             <div class="contact-info hidden">
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:example@email.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+910000000000"><i class="fas fa-phone"></i></a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Nitish. All Rights Reserved.</p>
-    </footer>
+    <!-- Lights Screen -->
+    <div id="lights" class="container lights-screen hidden">
+        <div id="lightPrompt" class="lights-prompt">
+            <h2>Light Up My Life ✨</h2>
+            <button id="lightButton" class="action-button" onclick="turnLightsOn()">Turn the Lights On ✨</button>
+        </div>
+        <div id="finalMessage" class="final-message">
+            <h3>Happy Birthday Madam Ji 🥂✨</h3>
+            <p style="font-weight: bold; color: var(--deep-rose);">Dear Madam Ji,</p>
+            <p>On this special day, I want to take a moment to celebrate not just your birthday, but the incredible person you are. Your presence lights up every room you enter, and your spirit illuminates the lives of everyone around you.</p>
+            <p>Your kindness, wisdom, and beautiful resolve inspire everyone around you. You have this magical way of making ordinary moments feel extraordinary, and today is all about celebrating the unique magic that is you.</p>
+            <p>May this new year of your life be filled with endless joy, beautiful surprises, and all the happiness your heart can hold. You deserve nothing but the very best that life has to offer.</p>
+            <p style="text-align: center; margin-top: 25px; font-weight: bold;">Wishing you the most wonderful birthday! 🎉</p>
+            <p class="signature">With love and warm wishes,<br>Someone who cares about you 💖</p>
+        </div>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- Typewriter Effect ---
-            const typewriterElement = document.querySelector('.typewriter');
-            const words = ["MERN Stack", "Full-Stack", "Frontend"];
-            let wordIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
+        // Memory data using local files downloaded from Google Drive
+        const memories = [
+            { url: "images/img1.jpg", caption: "This smile... my forever favorite" },
+            { url: "images/img2.jpg", caption: "You, always you..." },
+            { url: "images/img3.jpg", caption: "Forever and always, my heart" }
+        ];
 
-            function type() {
-                const currentWord = words[wordIndex];
-                if (isDeleting) {
-                    typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
-              
+        let currentMemoryIndex = 0;
+        let carouselRunning = false;
+        let carouselInterval;
+
+        function hideAll() {
+            document.getElementById('welcome').classList.add('hidden');
+            document.getElementById('memories').classList.add('hidden');
+            document.getElementById('cake').classList.add('hidden');
+            document.getElementById('lights').classList.add('hidden');
+        }
+
+        function showMemories() {
+            hideAll();
+            document.getElementById('memories').classList.remove('hidden');
+            currentMemoryIndex = 0;
+            carouselRunning = false;
+        }
+
+        function showCake() {
+            hideAll();
+            document.getElementById('cake').classList.remove('hidden');
+        }
+
+        function showLights() {
+            hideAll();
+            document.getElementById('lights').classList.remove('hidden');
+        }
+
+        function startMemoryCarousel() {
+            if (carouselRunning) return;
+
+            carouselRunning = true;
+            const img = document.getElementById('memoryImage');
+            const caption = document.getElementById('memoryCaption');
+            const prompt = document.getElementById('initialPrompt');
+            const nextBtn = document.getElementById('nextBtn');
+            const card = document.getElementById('memoryCard');
+
+            prompt.style.display = 'none';
+            card.onclick = null;
+
+            function showNextMemory() {
+                if (currentMemoryIndex >= memories.length) {
+                    clearInterval(carouselInterval);
+                    nextBtn.classList.remove('hidden');
+                    return;
+                }
+
+                const memory = memories[currentMemoryIndex];
+                img.src = memory.url;
+                img.style.display = 'block';
+                caption.textContent = memory.caption;
+                caption.style.display = 'block';
+
+                currentMemoryIndex++;
+            }
+
+            showNextMemory();
+            carouselInterval = setInterval(showNextMemory, 3500);
+        }
+
+        function turnLightsOn() {
+            const lightsScreen = document.getElementById('lights');
+            const lightPrompt = document.getElementById('lightPrompt');
+            const finalMessage = document.getElementById('finalMessage');
+
+            lightsScreen.classList.add('bright');
+            lightPrompt.classList.add('hidden');
+
+            setTimeout(() => {
+                finalMessage.classList.add('show');
+            }, 2100);
+        }
+
+        // Make memory card clickable to start carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const memoryCard = document.getElementById('memoryCard');
+            memoryCard.addEventListener('click', startMemoryCarousel);
+        });
+    </script>
+
+</body>
+</html>
